@@ -3,7 +3,7 @@ import TodoItemCreator from "./TodoItemCreator";
 import TodoListStats from "./TodoListStats";
 import TodoListFilters from "./TodoListFilters";
 import {useRecoilValue} from "recoil";
-import {filteredTodoListState} from "../state/state";
+import {filteredTodoListState} from "../../state/state";
 import TodoItem from "./TodoItem";
 
 function TodoList() {

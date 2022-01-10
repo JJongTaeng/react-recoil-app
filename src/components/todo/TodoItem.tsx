@@ -1,6 +1,6 @@
 import React from 'react';
 import {useRecoilState} from "recoil";
-import {todoListState, TodoListStateProps} from "../state/state";
+import {todoListState, TodoListStateProps} from "../../state/state";
 
 const TodoItem = ({item}: {item: TodoListStateProps}) => {
 

@@ -1,4 +1,5 @@
 import {atom, GetRecoilValue, selector} from "recoil";
+import {getNasaInfo} from "../service/nasa-image";
 
 export interface TodoListStateProps {
   id: number;
@@ -56,4 +57,23 @@ export const todoListStatsState = selector({
     };
   },
 });
+
+export const nasaInfoState = atom({
+  key: 'nasa-info',
+  default: {
+    collection: {}
+  }
+})
+
+export const fetchNasaInfo = selector<{collection: {}}>({
+  key: 'fetch/nasa-info',
+  get: async ({get}) => {
+    const response = await getNasaInfo();
+
+    return response.data;
+  },
+  set: ({set}, newValue) => {
+    set(nasaInfoState, newValue);
+  }
+})
 
